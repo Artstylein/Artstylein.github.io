@@ -3,42 +3,52 @@
 <!-- include ar.js for A-Frame -->
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 
+<script src="https://rawgit.com/impronunciable/aframe-chartbuilder-component/master/dist/aframe-chartbuilder-component.min.js"></script> 
+
 <body style='margin : 0px; overflow: hidden;'>
-  <!-- <a-scene embedded arjs>
-    <!-- create your content here. just a box for now 
+   <a-scene embedded arjs>
+    <!-- create your content here. just a box for now -->
 	  
+  
+	 <!-- <a-box position='0 0.5 0' material='opacity: 0.5;'>
+	 <a-gltf-model  src="scene.gltf"></a-gltf-model>
+	 </a-box> -->
+
+  
+    <!-- define a camera which will move according to the marker position # HIRO-->
 		
-	<!--  <a-box position='0 0.5 0' material='opacity: 0.5;'>
-	 <a-gltf-model src="scene.gltf"></a-gltf-model>
-	 </a-box> 
+    <a-marker-camera preset='hiro'>
+	 <a-entity position='0 0.5 0' chartbuilder="src: data.json"></a-entity>
+	</a-marker-camera>
 	 
-	 <a-assets>
-    <a-asset-item id="tree" src="tree.dae"></a-asset-item>
-  </a-assets>
-
-  <!-- Using the asset management system. 
-  <a-collada-model src="#tree"></a-collada-model>
-  
-
-  
-    <!-- define a camera which will move according to the marker position 
-    <a-marker-camera preset='hiro'> </a-marker-camera>
-	
-     
+	  <!-- define a camera which will move according to the marker position # BOTTLE -->
 	  
-  </a-scene> -->
-  
-  <a-scene>
-  <a-assets>
-    <a-asset-item id="tree" src="tree.dae"></a-asset-item>
-  </a-assets>
-
-  <!-- Using the asset management system. -->
-  <a-collada-model src="#tree"></a-collada-model>
-
-  <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
-  <a-collada-model src="tree.dae"></a-collada-model>
-</a-scene>
-
+	  
+	 <a-marker-camera type='bottle' url='multi/bottle.patt'>
+		<a-entity position='0 0.5 0' chartbuilder="src: data.json"></a-entity>
+	 </a-marker-camera>
+	 
+	  <!-- define a camera which will move according to the marker position # BAG-->
+	  
+	  
+	 <a-marker-camera type='bag' url='multi/bag.patt'>
+		<a-entity position='0 0.5 0' chartbuilder="src: data.json"></a-entity>
+	 </a-marker-camera>
+	 
+	  <!-- define a camera which will move according to the marker position # MONItOR-->
+	  
+	  
+	 <a-marker-camera type='monitor' url='multi/monitor.patt'>
+		<a-entity position='0 0.5 0' chartbuilder="src: data.json"></a-entity>
+	 </a-marker-camera>
+	 
+	  <!-- define a camera which will move according to the marker position # PHONE -->
+	  
+	 
+	 <a-marker-camera type='phone' url='multi/phone.patt'>
+		<a-entity position='0 0.5 0' chartbuilder="src: data.json"></a-entity>
+	 </a-marker-camera>
+	 
+  </a-scene>
 
 </body>
