@@ -7,16 +7,22 @@
   <a-scene embedded arjs>
     <!-- create your content here. just a box for now -->
 	  
-  
-	 <a-box position='0 0.5 0' material='opacity: 0.5;'>
+		
+	<!--  <a-box position='0 0.5 0' material='opacity: 0.5;'>
 	 <a-gltf-model src="scene.gltf"></a-gltf-model>
-	 </a-box>
+	 </a-box> -->
 	 
-	<!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
-	<a-collada-model src="tree.dae"></a-collada-model>
+	 <a-assets>
+    <a-asset-item id="tree" src="tree.dae"></a-asset-item>
+  </a-assets>
+
+  <!-- Using the asset management system. -->
+  <a-collada-model src="#tree"></a-collada-model>
+  
+
   
     <!-- define a camera which will move according to the marker position -->
-    <a-marker-camera preset='hiro'></a-marker-camera>
+    <a-marker-camera preset='hiro'> </a-marker-camera>
 	
      
 	  
