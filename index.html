@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="main.css">
+    <title>Marriott VR </title>
+  <meta name="description" content="VR NAA Solution Central ">
+       <!-- Animation -->
+        <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+
+   
+    <script src="js/aframe-extras.js"></script>
+    <script src="js/aframe-text-geometry-component.min.js"></script>
+
+</head>
+<body>
+
+  <a-scene fog="type: linear; color: #000; far: 16; near: 7">
+
+    <!-- Splash Screen -->
+    <div class="splash">
+      <div class="splash__card">
+        <h1>Marriott Rewards  </h1> 
+		<h2>Explore our offering in a Virtual Reality Mode</h2>
+          <h3>Instructions</h3>
+        <p>Desktop Users: You can move around with ARROW keys </p>
+        <p>Mobile Users: You can tap the screen </p>
+        <p>VR Users: Use VR buttons to Navigate </p>
+        
+        <img class="splash__img" src="img/other/whoa.jpg" alt="whoa" />
+        <button class="splash__button">Enter</button>
+      </div>
+    </div>
+
+    <!-- Load Assets -->
+    <a-assets>
+        <img id="sky" src="img/other/space.jpg"> 
+       
+      <a-asset-item id="lady-obj" src="models/office-guy.obj"></a-asset-item>  
+     <a-asset-item id="lady-mtl" src="models/office-guy.mtl"></a-asset-item>    
+      <!-- global -->
+      <img id="floor" src="img/other/floor.jpg">
+      <img id="wall" src="img/other/wall-concrete.jpg">
+      <img id="wall-secret" src="img/other/wall-concrete-secret.jpg">
+      <img id="wall-brick" src="img/other/brick.jpg">
+      <img id="room-sign-1" src="img/other/room-sign-1.png">
+      <img id="room-sign-2" src="img/other/room-sign-2.png">
+      <img id="room-mock-sign" src="img/other/mock-sign.png">
+      <img id="room-wire-sign" src="img/other/wire-sign.png">
+      
+      <!-- team -->
+      <img id="homepage" src="img/team/homepage.png">
+      <img id="tagline" src="img/team/tagline.png">
+	  <img id="spawnBack" src="img/team/SpawnBack.png">
+	  <img id="leftHallway" src="img/team/leftHallway.png">
+	  <img id="rightHallway" src="img/team/rightHallway.png">
+	  
+	  
+      <img id="won" src="img/team/won.png">    
+      <img id="team-arcadio" src="img/team/1.png">
+      <img id="team-dan" src="img/team/2.png">
+      <img id="team-dustin" src="img/team/3.png">
+      <img id="team-judy" src="img/team/4.png">
+      <img id="team-maceij" src="img/team/5.png">
+      <img id="team-porfirio" src="img/team/6.png">
+
+      <!-- Example Room 1-->
+      <img id="room1-sign-1" src="img/room1/room1-sign-1.png">
+      <img id="room1-sign-2" src="img/room1/room1-sign-2.png">      
+      <img id="room1-example1" src="img/room1/example1.png">
+      <img id="room1-example2" src="img/room1/example2.png">    
+
+      <!-- Example Room 2-->
+      <img id="room2-sign-1" src="img/room2/room2-sign-1.png">
+      <img id="room2-sign-2" src="img/room2/room2-sign-2.png">    
+      <img id="room2-final1" src="img/room2/final-1.png">
+      <img id="room2-final2" src="img/room2/final-2.png">
+      <img id="room2-mock1" src="img/room2/mock-1.png">
+      <img id="room2-wire1" src="img/room2/wire-1.png">
+	  <img id="backwall" src="img/room2/backwall.png">
+	  <img id="AtbeachTwr" src="img/room2/AtbeachTwr.png">
+	  <img id="AtCorTwr" src="img/room2/AtCorTwr.png">
+	  <img id="AtRoyTwr" src="img/room2/AtRoyTwr.png">
+	  
+      <video id="DEVideo" autoplay loop="false" webkit-playsinline playsinline src="img/theater/DE_MB.mp4"></video>    
+      
+
+      <!-- Example Room 3 -->
+      <img id="room3-sign-1" src="img/room3/room3-sign-1.png">
+      <img id="room3-sign-2" src="img/room3/room3-sign-2.png">     
+      <img id="room3-final1" src="img/room3/final-1.png">
+      <img id="room3-final2" src="img/room3/final-2.png">
+      <img id="room3-mock1" src="img/room3/mock-1.png">
+      <img id="room3-wire1" src="img/room3/wire-1.png">
+	  <img id="newOrleans" src="img/room3/newOrleans.png">
+	  <img id="skiForecat" src="img/room3/skiForecat.png">
+	  
+      <video id="ATVideo" autoplay loop="false" webkit-playsinline playsinline src="img/theater/AE_TN.mp4"></video>
+      <!-- Example Room 4-->
+      <img id="room4-sign-1" src="img/room4/room4-sign-1.png">
+      <img id="room4-sign-2" src="img/room4/room4-sign-2.png">     
+      <img id="room4-final1" src="img/room4/final-1.png">
+      <img id="room4-final2" src="img/room4/final-2.png">
+      <img id="room4-mock1" src="img/room4/mock-1.png">
+      <img id="room4-wire1" src="img/room4/wire-1.png">
+      <video id="DAVideo" autoplay loop="false" webkit-playsinline playsinline src="img/theater/DA_SW.mp4"></video>
+
+      <!-- Example Room 5 -->
+      <img id="room5-sign-1" src="img/room5/room5-sign-1.png">
+      <img id="room5-sign-2" src="img/room5/room5-sign-2.png"> 
+      <img id="room5-final1" src="img/room5/final-1.png">
+      <img id="room5-final2" src="img/room5/final-2.png">
+      <img id="room5-mock1" src="img/room5/mock-1.png">
+      <img id="hawaii" src="img/room5/hawaii.png">
+	  <img id="hawaiiRocks" src="img/room5/hawaiiRocks.png">
+	  
+      <video id="PVideo" autoplay loop="false" webkit-playsinline playsinline src="img/theater/P_MAMS.mp4"></video>
+
+      <!-- Example Theater 6-->
+      <video id="theaterVideo" autoplay loop="true" webkit-playsinline playsinline src="img/theater/NAASC.mp4"></video>
+      <img id="theater-curtains" src="img/theater/curtains.png">
+      <a-asset-item id="couch-obj" src="img/theater/couch/model.obj"></a-asset-item>
+      <a-asset-item id="couch-mtl" src="img/theater/couch/materials.mtl"></a-asset-item>
+
+      <!-- Secret Room -->
+      <a-asset-item id="fox-obj" src="img/secret/fox/model.obj"></a-asset-item>
+      <a-asset-item id="fox-mtl" src="img/secret/fox/materials.mtl"></a-asset-item>
+    </a-assets>
+
+    <!-- User / Camera -->
+   <a-entity id="night" geometry="primitive: plane" material="color: blue" visible=false
+          position="-10 0 0" sound="src: url(img/theater/night.mp3); autoplay: true; volume:0.5"></a-entity> 
+    <a-entity
+      id="player"
+      camera="user-height: 1.6"
+      universal-controls
+      kinematic-body
+      listener
+      position: "0 9 0"
+    ></a-entity>
+     <a-entity light="color:#ebe8ff;groundColor:#b7b7b7;type:ambient" position="0 10 0" rotation="0 -90 0"></a-entity>
+      <a-entity light="angle:90;color:#fee8e2;groundColor:#b7b7b7;intensity:0.3;type:point" position="0 10 0" rotation="0 -90 0"></a-entity>
+      
+    <a-entity id="lady" obj-model="obj: #lady-obj; mtl: #lady-mtl" scale="0.025 0.025 0.025"  position="-4.500 0 17.000">
+      
+      </a-entity>
+    <!-- Start Room (spawn) -->
+    <a-entity position="-1.5 1.5 19.5" rotation="0 0 0">
+      <!--left wall -->
+      <a-entity rotation= "0 90 0">
+		<a-image position="0 5 -4.4" src="#tagline" height="1" width="6"></a-image>
+        <a-image position="0.5 1.25 -4.4" src="#homepage" height="6" width="10"></a-image>
+      </a-entity>
+      <a-entity rotation= "0 180 0">
+        <a-image position="0 1.5 -4.4" src="#spawnBack" height="6" width="9"></a-image>
+      </a-entity> 
+      <a-entity id="won" visible="false" rotation= "0 180 0">
+        <a-image  position="0 2.5 -4.4" src="#won" height="2" width="3"  ></a-image>
+      </a-entity>     
+    </a-entity>
+     <a-entity    id ="bot"
+                cursor-listener
+                scale="2.5 2.5 2.5"
+                position="-1.5  0 7.5"
+                rotation="0 0 0"
+                animation-mixer="clip: walk"
+                json-model="src: url(models/bot4.json);"
+                sound="src: url(img/theater/walk.mp3); autoplay: true;
+                loop:5; volume:2"
+                       
+      >
+      <a-animation
+            attribute="position"
+            from="-1.5  0 13.5"
+            to="-1.5  0 7.5"
+            direction="alternative"
+            dur="9000"
+            repeat="2"
+            easing="ease">
+          </a-animation>
+      </a-entity>  
+      
+      
+    <!-- hallway -->
+	
+    <!-- right wall -->
+    <a-image position="-.1 3 5.5" rotation="0 -90 0" src="#team-dan" height="3" width="3"></a-image>
+    <a-image position="-.1 3 11.5" rotation="0 -90 0" src="#rightHallway" height="3" width="5"></a-image>
+    <a-image position="-.1 3 -9" rotation="0 -90 0" src="#team-judy" height="3" width="3"></a-image>
+    
+	<!-- left wall -->
+    <a-image position="-2.9 3 12" rotation="0 90 0" src="#team-porfirio" height="3" width="3"></a-image>
+    <a-image position="-2.9 3 7" rotation="0 90 0" src="#leftHallway" height="3" width="6"></a-image> 
+    <a-image position="-2.9 3 -9" rotation="0 90 0" src="#team-maceij" height="3" width="3"></a-image> 
+
+    
+
+    <!-- Example Room 2 (First Left) -->
+    <a-entity position="-10.5 1.5 7.5" rotation="0 90 0">
+      <!-- Room Sign -->
+      <!--<a-image position="-1.45 1 6.02" rotation="0 90 0" src="#room2-sign-1" height="1.5" width="3"></a-image>
+      <a-image position="1.45 1 6.02" rotation="0 -90 0" src="#room2-sign-2" height="1.5" width="3"></a-image> -->
+      <!-- Back wall 
+      <a-image position="2 0 -4.4" src="#room2-final3" height="2.5" width="2.5"></a-image>
+      <a-image position="2 2.4 -4.4" src="#room2-final4" height="2.5" width="2.5"></a-image>
+      <a-image position="0 5.1 -4.2" rotation="15 0 0" src="#room2-final-sign" height="2.5" width="5"></a-image>
+     
+      -->
+	  
+	  <!-- Front wall -->
+      <a-image position="-2 2.4 -4.4" src="#room2-final1" height="5" width="4"></a-image>
+	  <a-image position="3 2.4 -4.4" src="#AtCorTwr" height="5" width="4"></a-image>
+	  <a-image position="7 2.4 -4.4" src="#AtbeachTwr" height="5" width="4"></a-image>
+	  <a-image position="11 2.4 -4.4" src="#AtRoyTwr" height="5" width="4"></a-image>
+      <!-- <a-image position="-2 0 -4.4" src="#room2-final2" height="1.5" width="3"></a-image> -->
+      <!-- <a-video src="#DEVideo" width="4" height="2.25" position="2 1.4 -4.4"></a-video> 
+	  <a-image position="2 1.4 -4.4" src="#" height="1.5" width="3"></a-image> 
+	  
+	  -->
+        
+     	 
+      <a-entity rotation= "0 -90 0">
+      <!-- <a-image position="-0 1 -4.4" src="#room2-mock1" height="5" width="5"></a-image> 
+        <a-image position="0 5.1 -4.2" rotation="15 0 0" src="#room-mock-sign" height="2.5" width="5"></a-image> -->
+      </a-entity>
+	  
+	 <!-- Left wall -->
+      <a-entity rotation= "0 90 0">
+        <a-image position="0 2 -4.4" src="#room2-wire1" height="6" width="7"></a-image>
+        <!-- <a-image position="0 5.1 -4.2" rotation="15 0 0" src="#room-wire-sign" height="2.5" width="5"></a-image> -->
+      </a-entity>
+	  
+	 <!--back wall -->
+	  <a-entity rotation= "0 180 0">
+		<a-image position="0 2 -4.4" src="#backwall" height="6" width="7"></a-image>		
+	  </a-entity>
+	  
+    </a-entity>
+
+    <!-- Room 3 (First Right) -->
+    <a-entity position="7.5 1.5 7.5" rotation="0 -90 0">
+	
+      <!-- Room Sign -->
+      <!-- <a-image position="-1.45 1 6.02" rotation="0 90 0" src="#room3-sign-1" height="1.5" width="3"></a-image>
+      <a-image position="1.45 1 6.02" rotation="0 -90 0" src="#room3-sign-2" height="1.5" width="3"></a-image> -->
+	  
+      <!-- Front wall -->
+	  <a-image position="-6 2 -4.4" src="#room3-final2" height="8" width="16"></a-image>
+      <!-- <a-image position="-2 2.4 -4.4" src="#room3-final1" height="1.5" width="3"></a-image> -->
+      <!-- <a-video src="#ATVideo" width="4" height="2.25" position="2 1.4 -4.4"></a-video>         
+      <a-image position="-2.2 1.3 -4.4" src="#room3-page-before" height="4" width="4"></a-image>
+      <a-image position="2.2 1.3 -4.4" src="#room3-page-after" height="4" width="4"></a-image>
+      <a-image position="0 5.1 -4.2" rotation="15 0 0" src="#room3-beforeafter" height="2.5" width="5"></a-image> -->
+	  
+      <!--right wall -->
+	  
+      <a-entity rotation= "0 -90 0">     
+        <a-image position="0 2 -4.4" src="#skiForecat" height="6" width="7"></a-image> 
+      </a-entity>
+	  
+		<!--left wall -->
+		<a-entity rotation= "0 90 0">
+		</a-entity>
+		
+		<!-- backwall -->
+		<a-entity rotation= "0 180 0">
+			<a-image position="0 2 -4.4" src="#newOrleans" height="6" width="7"></a-image>		
+		</a-entity>
+	  
+    </a-entity>
+
+    <!-- Example Room 4 (Second Left) -->
+    <a-entity position="-10.5 1.5 -4.5" rotation="0 90 0">
+      <!-- Room Sign -->
+      <!-- <a-image position="-1.45 1 6.02" rotation="0 90 0" src="#room4-sign-1" height="1.5" width="3"></a-image>
+      <a-image position="1.45 1 6.02" rotation="0 -90 0" src="#room4-sign-2" height="1.5" width="3"></a-image> -->
+	  
+      <!-- Front wall -->
+      <!--<a-image position="-2 2.4 -4.4" src="#room4-final1" height="1.5" width="3"></a-image>
+      <a-image position="-2 0 -4.4" src="#room4-final2" height="1.5" width="3"></a-image>
+      <a-video src="#DAVideo" width="4" height="2.25" position="2 1.4 -4.4"></a-video>        
+      <a-image position="0 1.5 -4.4" src="#room4-map" height="7" width="7"></a-image>
+      <a-image position="0 5.1 -4.2" rotation="15 0 0" src="#room4-sign-roadshow" height="2.5" width="5"></a-image> -->
+	  
+      <!--right wall -->
+       <a-entity rotation= "0 -90 0">
+		<a-image position="-2 2.4 -4.4" src="#room4-wire1" height="5" width="4"></a-image>
+        <a-image position="2 1 -4.4" src="#room4-final2" height="5" width="4"></a-image>
+        <!-- <a-image position="0 5.1 -4.2" rotation="15 0 0" src="#room4-sign-photos" height="2.5" width="5"></a-image>  -->
+		
+      </a-entity>
+	  
+      <!--left wall -->
+      <a-entity rotation= "0 90 0">
+      
+      </a-entity>
+	  
+	  <!--back wall -->
+	  <a-entity rotation= "0 180 0">
+		<a-image position="0 2 -4.4" src="#room4-mock1" height="6" width="7"></a-image>		
+	  </a-entity>
+	  
+    </a-entity>
+
+    <!-- Example Room 5 (Second Right) -->
+    <a-entity position="7.5 1.5 -4.5" rotation="0 -90 0">
+     <!-- Room Sign -->
+      <!-- <a-image position="-1.45 1 6.02" rotation="0 90 0" src="#room5-sign-1" height="1.5" width="3"></a-image>
+      <a-image position="1.45 1 6.02" rotation="0 -90 0" src="#room5-sign-2" height="1.5" width="3"></a-image>  -->
+      <!-- Back wall -->
+       <!--  <a-image position="-2 2.4 -4.4" src="#room5-final1" height="1.5" width="3"></a-image>
+      <a-image position="-2 0 -4.4" src="#room5-final2" height="1.5" width="3"></a-image>
+      <a-video src="#PVideo" width="4" height="2.25" position="2 1.4 -4.4"></a-video>
+     <a-image position="0 1.3 -4.4" src="#room5-landing" height="5" width="2.5"></a-image>
+      <a-image position="0 5.1 -4.2" rotation="15 0 0" src="#room5-sign-back" height="2.5" width="5"></a-image> -->
+	  
+      <!--right wall -->
+      <a-entity rotation= "0 -90 0">
+      </a-entity>
+	  
+      <!--left wall -->
+      <a-entity rotation= "0 90 0">
+       <a-image position="0 2 -4.4" src="#hawaii" height="6" width="7"></a-image>
+      </a-entity>
+	  
+	  <!-- backwall -->
+	  <a-entity rotation= "0 180 0">
+		<a-image position="0 2 -4.4" src="#hawaiiRocks" height="6" width="7"></a-image>		
+	  </a-entity>
+	  
+    </a-entity>
+
+
+    <!-- Example Room 6 (far back room ) -->
+    <a-entity position="-1.5 1.5 -22.5">
+      <!-- Room Sign -->
+      <a-image position="-1.45 1 6.02" rotation="0 90 0" src="#room-sign-1" height="1.5" width="3"></a-image>
+      <a-image position="1.45 1 6.02" rotation="0 -90 0" src="#room-sign-2" height="1.5" width="3"></a-image>
+      <!-- Back wall -->
+      <a-video src="#theaterVideo" width="7" height="5.25" position="0 1.4 -4.4"></a-video>
+      <a-image position="0 0 -4.4" src="#theater-curtains" height="12" width="9"></a-image>
+      <!-- objects -->
+      <a-entity obj-model="obj: #couch-obj; mtl: #couch-mtl" position ="0 -1 1" rotation="0 0 0" scale="2 2 2"></a-entity>
+      <!-- ceiling -->
+      <a-plane position="0 6 0" rotation="90 0 0" height="9" width="9" color="black"></a-plane>
+    </a-entity>
+
+    <!-- Secret Room (Second Right) -->
+    <a-entity position="-22.5 1.5 19.5" rotation="0 0 0">
+       
+      <a-entity obj-model="obj: #fox-obj; mtl: #fox-mtl" rotation="0 -110 0"></a-entity>
+    </a-entity>
+
+
+
+    <!-- Ground -->
+    <a-grid id="ground" static-body material="src: #floor; repeat: 15 15" rotation="0 -90 0"></a-grid>
+
+    <!-- Walls (used by map.js -->)
+    <a-entity id="walls"></a-entity>
+
+
+    <!-- Sky <a-sky id="sky" color="#0000ff"></a-sky>-->
+    
+    
+    <a-sky src="#sky" rotation="0 -90 0"></a-sky>  
+  </a-scene>
+
+  <script src="js/map.js"></script>
+  <script src="js/video.js"></script>
+
+</body>
+</html>
